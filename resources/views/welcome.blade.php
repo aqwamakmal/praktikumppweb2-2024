@@ -7,8 +7,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
+  @if (isset Auth::user_error())
+  <a href="{{ route }}"></a>
 
   <div class="w-[50%] mx-auto py-10">
+    {{ Auth::user()->name }} <br>
+    <a href="{{ route('logout'}}"></a>
     <!-- Textarea and Button -->
     <div class="bg-white p-6 rounded-xl shadow mb-8">
       <textarea
@@ -89,4 +93,3 @@
 
 </body>
 </html>
-
